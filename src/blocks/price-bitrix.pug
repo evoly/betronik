@@ -1,0 +1,53 @@
+mixin price-bitrix
+    .price&attributes(attributes)
+        each title, index in bitrixTitles
+            .services-card
+                h3= title
+                p.services-card__descr.text-italic!= bitrixSubTitles[index]
+                p.services-card__descr.text-bold Что входит:
+                ul.services-list
+                    each feature in bitrixFeatures[index]
+                        li.services-list__item
+                            +svg-icon 
+                            span= feature
+                p.services-card__descr!= `<span>Для кого: </span> ${bitrixDescriptions[index]}`
+                p.services-card__price!= `<span>Стоимость: </span> ${bitrixPrices[index]}.`
+                +btn-consultation
+
+
+//- Заголовки карточек
+- var bitrixTitles = ['Базовое внедрение и настройка CRM', 'Продвинутая автоматизация и интеграции', 'Аналитика, обучение и SLA-поддержка'];
+-
+    var bitrixSubTitles = [
+    '<span>Внедрение Битрикс24</span> — комплексная подготовка портала под задачи компании.',
+    '<span>Автоматизация процессов</span> — глубокая оптимизация работы компании на базе Битрикс24.',
+    '<span>Поддержка Битрикс24</span> — сопровождение портала и помощь команде.'];
+
+//- Цены (вилка выше рынка)
+- var bitrixPrices = ['245 000 – 380 000 ₽', '490 000 – 850 000 ₽', 'от 85 000 ₽/мес'];
+
+//- Краткое описание (для кого / суть)
+-
+    var bitrixDescriptions = [
+    'Компаниям, которым нужна CRM «под ключ» без лишних модулей и сложных интеграций',
+    'Компаниям, которым не хватает стандартного функционала Битрикс24.',
+    'Компаниям, которым требуется постоянное сопровождение и аналитика.'
+    ];
+
+//- Подробные списки услуг для каждой карточки (массив массивов)
+- 
+    var bitrixFeatures = [
+    ['Настройка CRM-воронок и стадий сделок', 'Разграничение прав доступа и структура компании', 'Подключение почты и календарей'],
+    ['Автоматизация бизнес-процессов роботами', 'Интеграция с телефонией и мессенджерами', 'Интеграция с 1С, ERP и внешними системами', 'Разработка кастомных модулей и виджетов'],
+    ['Настройка аналитики и дашбордов', 'Обучение сотрудников и администраторов', 'Техническая поддержка по SLA']
+    ];
+
+    
+
+// - Для кого: Отдел продаж от 3 сотрудников, которым нужна прозрачная CRM «под ключ» без лишнего функционала.     
+
+
+mixin svg-icon
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-slate-500 flex-shrink-0" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
+
+        

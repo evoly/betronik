@@ -10,19 +10,19 @@ mixin services
                     li.services-list__item
                         +svg-icon 
                         span= val
-            a(href="http://").btn_dark Подробнее
+            a(href="services.html").btn_dark Подробнее
 
         .services-card
             .services-card__img
                 img(src="./src/assets/code.jpeg", alt="Разработка сайтов")
-            h3 Разработка сайтов
-            p.services-card__descr Индивидуализированные веб‑решения для вашего бренда
+            h3 Разработка веб-приложений и сервисов
+            p.services-card__descr Делаем сложное простым и удобным
             ul.services-list
                 each val in values2
                     li.services-list__item
                         +svg-icon 
                         span= val
-            a(href="http://").btn_dark Подробнее
+            a(href="services.html#web").btn_dark Подробнее
             
 
 
@@ -33,6 +33,6 @@ mixin svg-icon
 
 
 - var values1 = ['Настройка CRM-воронок и стадий сделок', 'Интеграция с телефонией и мессенджерами', 'Подключение почты и календарей', 'Обучение сотрудников и администраторов'];
-- var values2 = ['Сложные сервисы и сайты', 'Интернет-магазины', 'Управление задачами и проектами', 'Мобильная версия и PWA'];
+- var values2 = ['Сложные веб-сервисы', 'Корпоративные порталы', 'Мобильная версия и PWA', 'Управление задачами и проектами'];
 
         

@@ -1,0 +1,38 @@
+mixin services
+    .services&attributes(attributes)
+        .services-card
+            .services-card__img
+                img(src="./src/assets/bitrix.jpeg", alt="Настройка Битрикс24")
+            h3 Битрикс24
+            p.services-card__descr Настроим Битрикс24 так, чтобы он работал на вас
+            ul.services-list
+                each val in values1
+                    li.services-list__item
+                        +svg-icon 
+                        span= val
+            a(href="http://").btn_dark Подробнее
+
+        .services-card
+            .services-card__img
+                img(src="./src/assets/code.jpeg", alt="Разработка сайтов")
+            h3 Разработка сайтов
+            p.services-card__descr Индивидуализированные веб‑решения для вашего бренда
+            ul.services-list
+                each val in values2
+                    li.services-list__item
+                        +svg-icon 
+                        span= val
+            a(href="http://").btn_dark Подробнее
+            
+
+
+
+
+mixin svg-icon
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-slate-500 flex-shrink-0" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
+
+
+- var values1 = ['Настройка CRM-воронок и стадий сделок', 'Интеграция с телефонией и мессенджерами', 'Подключение почты и календарей', 'Обучение сотрудников и администраторов'];
+- var values2 = ['Сложные сервисы и сайты', 'Интернет-магазины', 'Управление задачами и проектами', 'Мобильная версия и PWA'];
+
+        

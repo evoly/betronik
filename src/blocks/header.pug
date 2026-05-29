@@ -4,14 +4,17 @@ mixin header(activePage)
             a(href= activePage === 'index' ? "#" : "index.html").header__logo
                 +logo
 
+            button(type='button').burger-menu
+                span.burger-menu__line
+
             nav.header__nav
                 ul.nav-list
                     li
                         a(href=`services.html` class= activePage === 'services' && "active").nav-list__item услуги
                     li
-                        a(href=`aboutus.html` class= activePage === 'aboutus' && "active").nav-list__item о компании
+                        a(href=`aboutus.html` class= activePage === 'aboutus' && "active").nav-list__item о&nbsp;компании
                     li
                         a(href=`#footer`).nav-list__item контакты
-                    li
+                    li.header__btn
                         +btn-consultation
 
